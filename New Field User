@@ -1,4 +1,5 @@
 # Copy paste this line ---> Set-ExecutionPolicy RemoteSigned
 Get-Module ActiveDirectory
+Get-ADOrganizationalUnit -Filter 'Name -Like "Field Service"' | Format-Table Name, DistinguishedName -A
 New-ADUser -path 'OU=Field Service,OU=Flogistix Users,DC=Flogistix,DC=LP' -Name 'Test User3' -GivenName 'Test' -Surname 'User3' -SamAccountName 'tuser3' -UserPrincipalName 'tuser3@flogistix.com' -EmailAddress 'tuser3@flogistix.com' -AccountPassword(Read-Host -AsSecureString 'Input Password') -Enabled $true
 Add-ADGroupMember -Identity 'Field Service Users' -Members 'tuser3'
