@@ -1,0 +1,45 @@
+$session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
+$session.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+Invoke-WebRequest -UseBasicParsing -Uri "https://api.flogistix.com/v2/units/10816" ` #<-----Change unit number
+-Method "PUT" `
+-WebSession $session `
+-Headers @{
+"Accept"="application/json, text/plain, */*"
+  "Accept-Encoding"="gzip, deflate, br"
+  "Accept-Language"="en-US,en;q=0.9"
+  "Origin"="http://tools.flogistix.com"
+  "Referer"="http://tools.flogistix.com/"
+  "Sec-Fetch-Dest"="empty"
+  "Sec-Fetch-Mode"="cors"
+  "Sec-Fetch-Site"="cross-site"
+  "sec-ch-ua"="`" Not A;Brand`";v=`"99`", `"Chromium`";v=`"100`", `"Google Chrome`";v=`"100`""
+  "sec-ch-ua-mobile"="?0"
+  "sec-ch-ua-platform"="`"Windows`""
+  "x-api-key"="d3081479c123d4f3ec9a678bbe15e6cf"
+} `
+-ContentType "application/json;charset=UTF-8" `
+-Body "{`"IP`":`"10.25.1.101`"}" #<-----Change IP address
+
+$session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
+$session.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+Invoke-WebRequest -UseBasicParsing -Uri "https://api.flogistix.com/v2/units/10310" `
+-Method "PUT" `
+-WebSession $session `
+-Headers @{
+"Accept"="application/json, text/plain, */*"
+  "Accept-Encoding"="gzip, deflate, br"
+  "Accept-Language"="en-US,en;q=0.9"
+  "Origin"="http://tools.flogistix.com"
+  "Referer"="http://tools.flogistix.com/"
+  "Sec-Fetch-Dest"="empty"
+  "Sec-Fetch-Mode"="cors"
+  "Sec-Fetch-Site"="cross-site"
+  "sec-ch-ua"="`" Not A;Brand`";v=`"99`", `"Chromium`";v=`"100`", `"Google Chrome`";v=`"100`""
+  "sec-ch-ua-mobile"="?0"
+  "sec-ch-ua-platform"="`"Windows`""
+  "x-api-key"="d3081479c123d4f3ec9a678bbe15e6cf"
+} `
+-ContentType "application/json;charset=UTF-8" `
+-Body "{`"ESN`":`"353968097294129`"}" #<--------Change ESN/IMEI
+
+ping 10.25.1.101 #<---Change IP address
