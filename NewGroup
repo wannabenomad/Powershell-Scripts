@@ -1,0 +1,3 @@
+# Copy paste this line ---> Set-ExecutionPolicy RemoteSigned
+Get-Module ActiveDirectory
+New-ADGroup -Name "Test Group" -SamAccountName TestGroup -DisplayName "Test User Group" -GroupCategory Security -GroupScope Global -Path "OU=Field Service,OU=Flogistix Users,DC=Flogistix,DC=LP" -Description "Members of this group are Test Accounts"
