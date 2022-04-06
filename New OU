@@ -1,0 +1,3 @@
+# Copy paste this line ---> Set-ExecutionPolicy RemoteSigned
+Get-Module ActiveDirectory
+New-ADOrganizationalUnit -Name "TestOU" -Path "DC=Flogistix,DC=LP" -ProtectedFromAccidentalDeletion $True
