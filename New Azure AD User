@@ -1,0 +1,4 @@
+Connect-AzureAD
+$PasswordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
+$PasswordProfile.Password = "Flogistix22"
+New-AzureADUser -DisplayName "Test User" -GivenName "Test" -Surname "User" -PasswordProfile $PasswordProfile -UserPrincipalName "tuser@flogistix365.onmicrosoft.com" -AccountEnabled $false -MailNickName "Testuser" -jobtitle "Help Desk" -Department "IT"
