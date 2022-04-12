@@ -1,4 +1,5 @@
 # Copy paste this line ---> Set-ExecutionPolicy RemoteSigned
 Get-Module ActiveDirectory
-Disable-ADAccount -identity 'jhernandez'
-Move-ADObject -Identity "CN=Jose Hernandez,OU=Pampa,OU=Flogistix Users,DC=Flogistix,DC=LP" -TargetPath "OU=Disabled Users,OU=Flogistix Users,DC=Flogistix,DC=LP"
+$_Name=Get-ADUser -identity ''
+Disable-ADAccount -identity $_Name
+Get-ADUser $_Name | Move-ADObject -TargetPath "OU=Disabled Users,OU=Flogistix Users,DC=Flogistix,DC=LP"
