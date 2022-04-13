@@ -1,0 +1,2 @@
+Connect-AzureAD
+New-AzResourceGroup -Name DevOps -Location "Central US" -Tag @{"Environment"="Production"; "Department"="Technology"}
