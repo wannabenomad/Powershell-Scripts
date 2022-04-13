@@ -1,0 +1,2 @@
+Connect-AzureAD
+Set-SPOSite -Identity https://www.Youtube.com/ -ConditionalAccessPolicy BlockAccess
